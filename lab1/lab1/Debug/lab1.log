@@ -1,0 +1,5 @@
+﻿  lab1.cpp
+D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(12,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(33,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(56,20): warning C4018: <: несоответствие типов со знаком и без знака
+  lab1.vcxproj -> D:\progect\labs-of-to-parallel\lab1\Debug\lab1.exe
