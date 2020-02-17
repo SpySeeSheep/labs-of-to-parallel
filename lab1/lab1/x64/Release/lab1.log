@@ -1,0 +1,7 @@
+﻿  lab1.cpp
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(13,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 167 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  lab1.vcxproj -> T:\Programs\labs of to parallel\lab1\x64\Release\lab1.exe

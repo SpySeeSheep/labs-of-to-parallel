@@ -1,5 +1,70 @@
 ﻿  lab1.cpp
-D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(12,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(33,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\progect\labs-of-to-parallel\lab1\lab1\lab1.cpp(56,20): warning C4018: <: несоответствие типов со знаком и без знака
-  lab1.vcxproj -> D:\progect\labs-of-to-parallel\lab1\Debug\lab1.exe
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(13,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(69,42): error C2039: type: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(117): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::chrono::duration<double,std::chrono::nanoseconds>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(632): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::chrono::duration<double,std::ratio<1,1>>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(178): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(610): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(69,1): error C2061: синтаксическая ошибка: идентификатор "type"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(72,1): error C2338: period not an instance of std::ratio
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(73,36): error C2039: num: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(73,1): error C2065: num: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,30): error C2039: num: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\type_traits(1224): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::common_type<_Ty1,_Ty1>"
+          with
+          [
+              _Ty1=std::chrono::duration<double,std::chrono::nanoseconds>
+          ]
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(96): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::common_type<std::chrono::duration<double,std::chrono::nanoseconds>>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(96): message : выполняется компиляция ссылки на экземпляр псевдоним шаблон функции "std::common_type_t<std::chrono::duration<double,std::chrono::nanoseconds>>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2065: num: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,3): error C2039: num: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2065: num: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2975: _Ax: недопустимый аргумент шаблона для "std::_Gcd", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(68): message : см. объявление "_Ax"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2975: _Bx: недопустимый аргумент шаблона для "std::_Gcd", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(68): message : см. объявление "_Bx"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,12): error C2039: den: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2065: den: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,3): error C2039: den: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2065: den: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2975: _Ax: недопустимый аргумент шаблона для "std::_Lcm", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(221): message : см. объявление "_Ax"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(231,1): error C2975: _Bx: недопустимый аргумент шаблона для "std::_Lcm", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(221): message : см. объявление "_Bx"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(169,36): error C2338: ratio_divide<R1, R2> requires R1 and R2 to be ratio<>s.
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(117): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::_Ratio_divide<std::nano,std::chrono::nanoseconds>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(87): message : выполняется компиляция ссылки на экземпляр псевдоним шаблон функции "std::_Ratio_divide_sfinae<std::nano,std::chrono::nanoseconds,true>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(171,42): error C2039: num: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(171,1): error C2065: num: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(171,1): error C2131: выражение не определяется константой
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(171,1): message : обнаружено неконстантное (под)выражение
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(172,42): error C2039: den: не является членом "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\chrono(466): message : см. объявление "std::chrono::duration<__int64,std::nano>"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(172,1): error C2065: den: необъявленный идентификатор
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(172,1): error C2131: выражение не определяется константой
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(172,1): message : обнаружено неконстантное (под)выражение
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(174,1): error C2975: _Nx: недопустимый аргумент шаблона для "std::ratio", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(79): message : см. объявление "_Nx"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(174,1): error C2975: _Dx: недопустимый аргумент шаблона для "std::ratio", требуется константное выражение времени компиляции
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(79): message : см. объявление "_Dx"
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(81,23): error C2338: zero denominator
+T:\Visual Studio IDE\VC\Tools\MSVC\14.24.28314\include\ratio(141): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::ratio<0,0>"
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(117): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "std::_Ratio_multiply<std::nano,std::ratio<0,0>>"
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(118,9): warning C4477: "printf": в строке форматирования "%f" требуется аргумент типа "double", но вариативный аргумент "2" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+T:\Programs\labs of to parallel\lab1\lab1\lab1.cpp(138,9): warning C4477: "printf": в строке форматирования "%f" требуется аргумент типа "double", но вариативный аргумент "2" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
