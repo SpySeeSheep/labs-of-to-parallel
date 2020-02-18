@@ -1,0 +1,4 @@
+﻿  test.cpp
+T:\Programs\labs of to parallel\lab1\lab1\test.cpp(30,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+T:\Programs\labs of to parallel\lab1\lab1\test.cpp(47,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  lab1.vcxproj -> T:\Programs\labs of to parallel\lab1\Debug\lab1.exe
