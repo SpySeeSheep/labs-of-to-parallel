@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define llong long long
+typedef long long llong;
 #define SIZE 10'000'000
 
 llong** create(int, int);
@@ -24,21 +24,6 @@ void runtime_sum_array(llong* arr, long size)
 	}
 	chrono::time_point<chrono::high_resolution_clock> end = chrono::high_resolution_clock::now();
 	cout << "runtime == " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << "   res ==" << res << endl;
-}
-
-void part_one() {
-	srand(time(NULL));
-	llong *arr = new llong[SIZE];
-	for (int i = 0; i < SIZE; i++)
-	{
-		arr[i] = (llong)rand() % 101 - 50;
-	}
-
-	runtime_sum_array(arr, SIZE);
-
-	sort(arr, arr + SIZE);
-
-	runtime_sum_array(arr, SIZE);
 }
 
 llong** random(llong** arr, int str, int col)
@@ -98,14 +83,11 @@ void multy_ijk(llong** a, int str1, int col1,
 	}
 	chrono::time_point<chrono::high_resolution_clock> end = chrono::high_resolution_clock::now();
 	cout << "runtime (ijk)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
-	/*for (int i = 0; i < str1; i++)
-	{
-		for (int j = 0; j < col2; j++)
-		{
-			cout << res[i][j] << "  ";
-		}
-		cout << endl;
-	}*/
+	//for (int i = 0; i < str1; i++)
+	//{
+	//	
+	//	cout << res[0][i] << "    ";
+	//}
 }
 
 void multy_ikj(llong** a, int str1, int col1,
@@ -128,14 +110,11 @@ void multy_ikj(llong** a, int str1, int col1,
 	}
 	chrono::time_point<chrono::high_resolution_clock> end = chrono::high_resolution_clock::now();
 	cout << "runtime (ikj)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
-	/*for (int i = 0; i < str1; i++)
-	{
-		for (int j = 0; j < col2; j++)
-		{
-			cout << res[i][j] << "  ";
-		}
-		cout << endl;
-	}*/
+	//for (int i = 0; i < str1; i++)
+	//{
+	//	
+	//	cout << res[0][i] << "    ";
+	//}
 }
 
 void multy_kji(llong** a, int str1, int col1,
@@ -158,14 +137,11 @@ void multy_kji(llong** a, int str1, int col1,
 	}
 	chrono::time_point<chrono::high_resolution_clock> end = chrono::high_resolution_clock::now();
 	cout << "runtime (kji)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
-	/*for (int i = 0; i < str1; i++)
-	{
-		for (int j = 0; j < col2; j++)
-		{
-			cout << res[i][j] << "  ";
-		}
-		cout << endl;
-	}*/
+	//for (int i = 0; i < str1; i++)
+	//{
+	//	
+	//	cout << res[0][i] << "    ";
+	//}
 }
 
 void multy_kij(llong** a, int str1, int col1,
@@ -176,11 +152,11 @@ void multy_kij(llong** a, int str1, int col1,
 	res = zero(res, str1, col2);
 
 	chrono::time_point<chrono::high_resolution_clock> beg = chrono::high_resolution_clock::now();
-	for (int j = 0; j < col2; j++)
+	for (int k = 0; k < str2; k++)
 	{
 		for (int i = 0; i < str1; i++)
 		{
-			for (int k = 0; k < str2; k++)
+			for (int j = 0; j < col2; j++)
 			{
 				res[i][j] += a[i][k] * b[k][j];
 			}
@@ -190,11 +166,8 @@ void multy_kij(llong** a, int str1, int col1,
 	cout << "runtime (kij)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
 	//for (int i = 0; i < str1; i++)
 	//{
-	//	for (int j = 0; j < col2; j++)
-	//	{
-	//		cout << res[i][j] << "  ";
-	//	}
-	//	cout << endl;
+	//	
+	//	cout << res[0][i] << "    ";
 	//}
 }
 
@@ -220,11 +193,8 @@ void multy_jik(llong** a, int str1, int col1,
 	cout << "runtime (jik)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
 	//for (int i = 0; i < str1; i++)
 	//{
-	//	for (int j = 0; j < col2; j++)
-	//	{
-	//		cout << res[i][j] << "  ";
-	//	}
-	//	cout << endl;
+	//	
+	//	cout << res[0][i] << "    ";
 	//}
 }
 
@@ -250,18 +220,30 @@ void multy_jki(llong** a, int str1, int col1,
 	cout << "runtime (jki)== " << chrono::duration_cast<chrono::microseconds>(end - beg).count() << endl;
 	//for (int i = 0; i < str1; i++)
 	//{
-	//	for (int j = 0; j < col2; j++)
-	//	{
-	//		cout << res[i][j] << "  ";
-	//	}
-	//	cout << endl;
+	//	
+	//	cout << res[0][i] << "    ";
 	//}
 }
 
+void part_one() {
+	cout <<endl<< "Part 1" << endl;
+	srand(time(NULL));
+	llong* arr = new llong[SIZE];
+	for (int i = 0; i < SIZE; i++)
+	{
+		arr[i] = (llong)rand() % 101 - 50;
+	}
+
+	runtime_sum_array(arr, SIZE);
+
+	sort(arr, arr + SIZE);
+
+	runtime_sum_array(arr, SIZE);
+}
 
 void part_two()
 {
-	cout << endl << endl;
+	cout << endl << endl << "Part 2";
 	int str1 = 2000;
 	int col1 = 500;
 	int str2 = col1;
@@ -281,6 +263,6 @@ void part_two()
 
 int main()
 {
-	part_one();
+	//part_one();
 	part_two();
 }

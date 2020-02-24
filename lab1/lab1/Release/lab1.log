@@ -1,0 +1,8 @@
+﻿  test.cpp
+D:\labs-of-to-parallel\lab1\lab1\test.cpp(32,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\labs-of-to-parallel\lab1\lab1\test.cpp(230,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 32 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  lab1.vcxproj -> D:\labs-of-to-parallel\lab1\Release\lab1.exe
