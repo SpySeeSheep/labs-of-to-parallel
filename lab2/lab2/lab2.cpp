@@ -4,15 +4,25 @@
 
 using namespace std;
 
-double** get_triangle_matrix(double** matr, int size)
+// Необязательная функция!!!
+// отключение асинхронного i/o в консоль
+// развязывание ручного ввода, т.к. он не используется
+const int ZERO = []() {
+    ios_base::sync_with_stdio(false);
+    /*returned before cin tie*/ cin.tie(nullptr);
+    return 0;
+}();
+
+double** get_triangle_matrix(double** matr, long size)
 {
-    for (int i = 0; i < size - 1; i++)
+    for (long i = 0; i < size - 1; i++)
     {
         double curr = matr[i][i];
-        for (int k = i + 1; k < size; k++)
+        #pragma omp parallel for
+        for (long k = i + 1; k < size; k++)
         {
             double del = matr[k][i] / curr;
-            for (int j = i; j < size + 1; j++)
+            for (long j = i; j < size + 1; j++)
             {
                 matr[k][j] -= matr[i][j] * del;
             }
@@ -21,11 +31,11 @@ double** get_triangle_matrix(double** matr, int size)
     return matr;
 }
 
-void print_m(double** matr, int size)
+void print_m(double** matr, long size)
 {
-    for (int i = 0; i < size; i++)
+    for (long i = 0; i < size; i++)
     {
-        for (int j = 0; j < size; j++)
+        for (long j = 0; j < size; j++)
         {
             cout << matr[i][j] << "   ";
         }
@@ -33,26 +43,28 @@ void print_m(double** matr, int size)
     }
 }
 
-void print_r(double* res, int size)
+void print_r(double* res, long size)
 {
-    for (int i = 0; i < size; i++)
+    for (long i = 0; i < size; i++)
     {
         cout << "x" <<i+1<<" = "<<res[i] << endl;
     }
 }
 
-double* get_result_slau(double** nmatr, int size)
+double* get_result_slau(double** nmatr, long size)
 {
     double* res = new double[size];
-    for (int i = 0; i < size - 1; i++)
+    #pragma omp parallel for
+    for (long i = 0; i < size - 1; i++)
     {
         res[i] = 0;
     }
     res[size - 1] = nmatr[size - 1][size] / nmatr[size - 1][size - 1];
-    for (int i = size - 2; i >= 0; i--)
+    #pragma omp parallel for
+    for (long i = size - 2; i >= 0; i--)
     {
         double crisp = 0;
-        for (int j = i + 1; j < size; j++)
+        for (long j = i + 1; j < size; j++)
         {
             crisp += nmatr[i][j] * res[j];
         }
@@ -61,12 +73,12 @@ double* get_result_slau(double** nmatr, int size)
     return res;
 }
 
-bool isLiveResult(double** nmatr, int size)
+bool isLiveResult(double** nmatr, long size)
 {
-    for (int i = 0; i < size; i++)
+    for (long i = 0; i < size; i++)
     {
         bool flag = false;
-        for (int j = 0; j < size; j++)
+        for (long j = 0; j < size; j++)
         {
             if (nmatr[i][j] != 0) {
                 flag = true; break;
@@ -79,28 +91,68 @@ bool isLiveResult(double** nmatr, int size)
 
 int main()
 {
-    int size_slau = 10000; //количество переменных и уравнений слау
+    long size_slau = 100; //количество переменных и уравнений слау
     double** matrix = new double* [size_slau];
-    for (int i = 0; i < size_slau; ++i)
+    for (long i = 0; i < size_slau; ++i)
     {
         matrix[i] = new double[size_slau + 1];
     }
 
     default_random_engine generator;
     tr1::normal_distribution<double> randomize(-10, 100);
-    //// tests
-    //double a1[3][3] = { {2, -1, -6},{7, -4, 2},{1, -2, -4} };
-    //double b[3] = {-3, 13, -1};
-    for (int i = 0; i < size_slau; ++i)
+    for (long i = 0; i < size_slau; ++i)
     {
-        for (int j = 0; j < size_slau + 1; ++j)
+        for (long j = 0; j < size_slau + 1; ++j)
         {
             matrix[i][j] = randomize(generator);
         }
     }
+
+    /*tests 1.*/
+    //  ans == {1;-1;1}
+    // size_slau = 3;
+    //double a1[3][3] = { {2, -1, -6},{7, -4, 2},{1, -2, -4} };
+    //double b1[3] = {-3, 13, -1};
+    //for (long i = 0; i < size_slau; ++i)
+    //{
+    //    for (long j = 0; j < size_slau; ++j)
+    //    {
+    //        matrix[i][j] = a1[i][j];
+    //    }
+    //    matrix[i][size_slau] = b1[i];
+    //}
+
+    /*tests 2.*/
+    //  ans == {1;2;2,0}
+    //size_slau = 4;
+    //double a2[4][4] = { {2, 5, 4, 1},{1, 3, 2, 1},{2, 10, 9, 7},{3, 8, 9, 2} };
+    //double b2[4] = {20,11,40,37};
+    //for (long i = 0; i < size_slau; ++i)
+    //{
+    //    for (long j = 0; j < size_slau; ++j)
+    //    {
+    //        matrix[i][j] = a2[i][j];
+    //    }
+    //    matrix[i][size_slau] = b2[i];
+    //}
+
+    /*tests 3.*/
+    //  ans == {4, 0, -1}
+    //size_slau = 3;
+    //double a2[3][3] = { {1, 2, 3},{2, -1, 2},{1, 1, 5} };
+    //double b2[3] = {1,6,-1};
+    //for (long i = 0; i < size_slau; ++i)
+    //{
+    //    for (long j = 0; j < size_slau; ++j)
+    //    {
+    //        matrix[i][j] = a2[i][j];
+    //    }
+    //    matrix[i][size_slau] = b2[i];
+    //}
+
     auto beg = chrono::high_resolution_clock::now();
     double** nmatr = get_triangle_matrix(matrix, size_slau);
-    //print_m(nmatr, size_slau);
+    //prlong_m(nmatr, size_slau);
     if (isLiveResult(nmatr, size_slau))
     {
         double* result = get_result_slau(nmatr, size_slau);
@@ -112,11 +164,11 @@ int main()
         cout << "Matrix is not union!"; // слау не совместная
     }
 
-    for (int i = 0; i < size_slau; i++)
+    for (long i = 0; i < size_slau; i++)
     {
-        delete matrix[i];
+        delete[] matrix[i];
     }
-    delete matrix;
+    delete[] matrix;
     
     auto end = chrono::high_resolution_clock::now();
     cout << "runtime == " << chrono::duration_cast<chrono::microseconds>(end - beg).count();
