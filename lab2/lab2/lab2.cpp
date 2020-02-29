@@ -88,17 +88,38 @@ bool is_it_has_zero_str(double** nmatr, long size)
     return true;
 }
 
-void generate(double** matr, long size)
+bool hasLinNonDependence(double** matr, long pos, long size)
+{
+    if (pos == 0) return false;
+    double coef = matr[0][pos - 1] / matr[0][pos];
+    bool f = false;
+    for (int i = pos; i > 0; --i)
+    {
+        for (int j = 0; j < size + 1; i++)
+        {
+            if (coef != matr[i - 1][j] / matr[i][j])
+                break;
+            else if (j == size) return true;
+        }
+    }
+    return false;
+}
+
+bool generate(double** matr, long size)
 {
     default_random_engine generator;
     tr1::normal_distribution<double> randomize(-10, 100);
-    for (long i = 0; i < size; ++i)
+    for (int i = 0; i < size; ++i)
     {
-        for (long j = 0; j < size + 1; ++j)
+        for (int j = 0; j < size + 1; ++j)
         {
             matr[i][j] = randomize(generator);
         }
+        if (hasLinNonDependence(matr, i, size)) {
+            return false;
+        }
     }
+    return true;
 }
 
 int main()
@@ -109,7 +130,8 @@ int main()
     {
         matrix[i] = new double[size_slau + 1];
     }
-    generate(matrix, size_slau);
+
+    while (!generate(matrix, size_slau));
     
 
     /*tests 1.*/
