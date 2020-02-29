@@ -60,7 +60,6 @@ double* get_result_slau(double** nmatr, long size)
         res[i] = 0;
     }
     res[size - 1] = nmatr[size - 1][size] / nmatr[size - 1][size - 1];
-    #pragma omp parallel for
     for (long i = size - 2; i >= 0; i--)
     {
         double crisp = 0;
@@ -73,7 +72,7 @@ double* get_result_slau(double** nmatr, long size)
     return res;
 }
 
-bool isLiveResult(double** nmatr, long size)
+bool is_it_has_zero_str(double** nmatr, long size)
 {
     for (long i = 0; i < size; i++)
     {
@@ -89,24 +88,29 @@ bool isLiveResult(double** nmatr, long size)
     return true;
 }
 
+void generate(double** matr, long size)
+{
+    default_random_engine generator;
+    tr1::normal_distribution<double> randomize(-10, 100);
+    for (long i = 0; i < size; ++i)
+    {
+        for (long j = 0; j < size + 1; ++j)
+        {
+            matr[i][j] = randomize(generator);
+        }
+    }
+}
+
 int main()
 {
-    long size_slau = 100; //количество переменных и уравнений слау
+    long size_slau = 2000; //количество переменных и уравнений слау
     double** matrix = new double* [size_slau];
     for (long i = 0; i < size_slau; ++i)
     {
         matrix[i] = new double[size_slau + 1];
     }
-
-    default_random_engine generator;
-    tr1::normal_distribution<double> randomize(-10, 100);
-    for (long i = 0; i < size_slau; ++i)
-    {
-        for (long j = 0; j < size_slau + 1; ++j)
-        {
-            matrix[i][j] = randomize(generator);
-        }
-    }
+    generate(matrix, size_slau);
+    
 
     /*tests 1.*/
     //  ans == {1;-1;1}
@@ -152,16 +156,22 @@ int main()
 
     auto beg = chrono::high_resolution_clock::now();
     double** nmatr = get_triangle_matrix(matrix, size_slau);
-    //prlong_m(nmatr, size_slau);
-    if (isLiveResult(nmatr, size_slau))
+    //print_m(nmatr, size_slau);
+    if (is_it_has_zero_str(nmatr, size_slau))
     {
         double* result = get_result_slau(nmatr, size_slau);
         print_r(result, size_slau);
         delete result;
+        auto end = chrono::high_resolution_clock::now();
+        cout << "runtime == " << chrono::duration_cast<chrono::microseconds>(end - beg).count();
+
     }
     else
     {
-        cout << "Matrix is not union!"; // слау не совместная
+        cout << "Matrix is not union!"; // слау расходится или имеет бесконечно возможные решения
+        auto end = chrono::high_resolution_clock::now();
+        cout << "runtime == " << chrono::duration_cast<chrono::microseconds>(end - beg).count();
+
     }
 
     for (long i = 0; i < size_slau; i++)
@@ -170,6 +180,4 @@ int main()
     }
     delete[] matrix;
     
-    auto end = chrono::high_resolution_clock::now();
-    cout << "runtime == " << chrono::duration_cast<chrono::microseconds>(end - beg).count();
 }
