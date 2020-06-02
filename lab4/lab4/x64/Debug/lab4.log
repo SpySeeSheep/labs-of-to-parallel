@@ -1,0 +1,8 @@
+﻿  lab4.cpp
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(120,92): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(108,3): warning C4101: end_col: неиспользованная локальная переменная
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(102,6): warning C4101: E: неиспользованная локальная переменная
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(107,3): warning C4101: end_str: неиспользованная локальная переменная
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(106,3): warning C4101: curr_col: неиспользованная локальная переменная
+T:\Programs\labs of to parallel\lab4\lab4\lab4.cpp(105,3): warning C4101: curr_str: неиспользованная локальная переменная
+  lab4.vcxproj -> T:\Programs\labs of to parallel\lab4\x64\Debug\lab4.exe

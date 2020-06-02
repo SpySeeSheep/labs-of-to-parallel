@@ -1,0 +1,6 @@
+﻿  lab5.cpp
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(9,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(51,74): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(64,102): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(43,9): warning C4101: init_status: неиспользованная локальная переменная
+  ConsoleApplication.vcxproj -> T:\Programs\labs of to parallel\ConsoleApplication\x64\Debug\lab5.exe

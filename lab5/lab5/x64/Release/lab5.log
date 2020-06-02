@@ -1,0 +1,7 @@
+﻿  lab5.cpp
+T:\Programs\labs of to parallel\lab5\lab5\lab5.cpp(7,42): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 12 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  lab5.vcxproj -> T:\Programs\labs of to parallel\lab5\x64\Release\lab5.exe

@@ -1,0 +1,6 @@
+﻿  lab5.cpp
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(11,27): warning C4018: <: несоответствие типов со знаком и без знака
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(40,23): warning C4018: <: несоответствие типов со знаком и без знака
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(49,23): warning C4018: <: несоответствие типов со знаком и без знака
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(34,9): warning C4101: init_status: неиспользованная локальная переменная
+  ConsoleApplication.vcxproj -> T:\Programs\labs of to parallel\ConsoleApplication\Debug\lab5.exe

@@ -1,0 +1,10 @@
+﻿  lab5.cpp
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(8,45): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(41,74): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(50,102): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+T:\Programs\labs of to parallel\ConsoleApplication\ConsoleApplication\lab5.cpp(34,9): warning C4101: init_status: неиспользованная локальная переменная
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 154 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  ConsoleApplication.vcxproj -> T:\Programs\labs of to parallel\ConsoleApplication\x64\Release\lab5.exe
